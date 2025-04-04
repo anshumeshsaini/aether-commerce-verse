@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
@@ -20,6 +20,7 @@ const NavBar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -43,6 +44,10 @@ const NavBar = () => {
     }
   };
 
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-4 py-3">
@@ -54,13 +59,37 @@ const NavBar = () => {
 
           {/* Desktop Navigation */}
           <nav className={cn("hidden md:flex items-center space-x-8")}>
-            <Link to="/products" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link 
+              to="/products" 
+              className={cn(
+                "transition-colors",
+                isActive('/products') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
+            >
               Shop
             </Link>
-            <Link to="/collections" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link 
+              to="/collections" 
+              className={cn(
+                "transition-colors",
+                isActive('/collections') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
+            >
               Collections
             </Link>
-            <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors">
+            <Link 
+              to="/about" 
+              className={cn(
+                "transition-colors",
+                isActive('/about') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
+            >
               About
             </Link>
           </nav>
@@ -103,7 +132,10 @@ const NavBar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-foreground/80 hover:text-foreground hover:bg-white/10"
+              className={cn(
+                "text-foreground/80 hover:text-foreground hover:bg-white/10",
+                isActive('/wishlist') && "text-foreground bg-white/5"
+              )}
               asChild
             >
               <Link to="/wishlist">
@@ -114,7 +146,10 @@ const NavBar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-foreground/80 hover:text-foreground hover:bg-white/10"
+              className={cn(
+                "text-foreground/80 hover:text-foreground hover:bg-white/10",
+                isActive('/cart') && "text-foreground bg-white/5" 
+              )}
               asChild
             >
               <Link to="/cart">
@@ -125,7 +160,10 @@ const NavBar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-foreground/80 hover:text-foreground hover:bg-white/10"
+              className={cn(
+                "text-foreground/80 hover:text-foreground hover:bg-white/10",
+                isActive('/account') && "text-foreground bg-white/5"
+              )}
               asChild
             >
               <Link to="/account">
@@ -153,21 +191,36 @@ const NavBar = () => {
           <nav className="flex flex-col space-y-4 pt-4 pb-2">
             <Link 
               to="/products" 
-              className="text-foreground/80 hover:text-foreground transition-colors py-2"
+              className={cn(
+                "transition-colors py-2",
+                isActive('/products') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
               onClick={closeMenu}
             >
               Shop
             </Link>
             <Link 
               to="/collections" 
-              className="text-foreground/80 hover:text-foreground transition-colors py-2"
+              className={cn(
+                "transition-colors py-2",
+                isActive('/collections') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
               onClick={closeMenu}
             >
               Collections
             </Link>
             <Link 
               to="/about" 
-              className="text-foreground/80 hover:text-foreground transition-colors py-2"
+              className={cn(
+                "transition-colors py-2",
+                isActive('/about') 
+                  ? "text-foreground font-medium" 
+                  : "text-foreground/80 hover:text-foreground"
+              )}
               onClick={closeMenu}
             >
               About

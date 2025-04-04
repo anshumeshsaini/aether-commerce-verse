@@ -2,37 +2,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Mic, Star, Image, ShoppingBag, RotateCw, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
     icon: <Star size={24} className="text-neon-purple" />,
     title: "AI Personal Shopper",
-    description: "Get personalized recommendations based on your style, mood, and past purchases."
+    description: "Get personalized recommendations based on your style, mood, and past purchases.",
+    link: "/products"
   },
   {
     icon: <Mic size={24} className="text-neon-teal" />,
     title: "Voice Search",
-    description: "Simply speak to search for products naturally and conversationally."
+    description: "Simply speak to search for products naturally and conversationally.",
+    link: "/products"
   },
   {
     icon: <Image size={24} className="text-neon-pink" />,
     title: "Visual Search",
-    description: "Upload an image to find similar or complementary products instantly."
+    description: "Upload an image to find similar or complementary products instantly.",
+    link: "/products"
   },
   {
     icon: <RotateCw size={24} className="text-neon-purple" />,
     title: "AR Preview",
-    description: "See how products look in your space before purchasing."
+    description: "See how products look in your space before purchasing.",
+    link: "/products"
   },
   {
     icon: <ShoppingBag size={24} className="text-neon-teal" />,
     title: "Magic Cart",
-    description: "Let AI fill your cart based on your budget and preferences."
+    description: "Let AI fill your cart based on your budget and preferences.",
+    link: "/cart"
   },
   {
     icon: <MessageCircle size={24} className="text-neon-pink" />,
     title: "AI Chat Assistance",
-    description: "Get real-time help and detailed product information from our AI."
+    description: "Get real-time help and detailed product information from our AI.",
+    link: "/products"
   }
 ];
 
@@ -68,11 +75,13 @@ const FeaturesSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.1 * index }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full glass group-hover:bg-neon-purple/10">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-foreground/70">{feature.description}</p>
+              <Link to={feature.link} className="block h-full">
+                <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full glass group-hover:bg-neon-purple/10">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-foreground/70">{feature.description}</p>
+              </Link>
             </motion.div>
           ))}
         </div>

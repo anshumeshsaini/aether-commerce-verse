@@ -149,7 +149,7 @@ const HeroSection: React.FC = () => {
               </Button>
               
               <Button variant="outline" className="rounded-full px-8 gap-2 border-white/20 backdrop-blur-sm" asChild>
-                <Link to="/ai-advisor">
+                <Link to="/products">
                   <Search size={16} /> AI Advisor
                 </Link>
               </Button>
