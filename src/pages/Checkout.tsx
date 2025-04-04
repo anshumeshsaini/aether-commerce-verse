@@ -32,7 +32,7 @@ const Checkout = () => {
       toast({
         title: "Order placed successfully!",
         description: "Your order has been confirmed and will be shipped soon.",
-        variant: "success"
+        variant: "default" // Changed from "success" to "default"
       });
     }, 1500);
   };
