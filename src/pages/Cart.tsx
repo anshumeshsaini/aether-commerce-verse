@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Trash2, 
@@ -9,7 +9,7 @@ import {
   ArrowRight, 
   ShoppingBag, 
   ChevronLeft,
-  Sparkles,
+  Star,
   CreditCard,
 } from 'lucide-react';
 import NavBar from '@/components/NavBar';
@@ -36,6 +36,7 @@ const Cart = () => {
   const [promoCode, setPromoCode] = useState('');
   const [promoApplied, setPromoApplied] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -104,6 +105,10 @@ const Cart = () => {
         variant: "destructive",
       });
     }
+  };
+
+  const handleCheckout = () => {
+    navigate('/checkout');
   };
 
   // Calculate cart totals
@@ -285,7 +290,7 @@ const Cart = () => {
               {/* AI Recommendations */}
               <div className="mt-12">
                 <div className="flex items-center gap-2 mb-6">
-                  <Sparkles className="text-neon-purple" size={20} />
+                  <Star className="text-neon-purple" size={20} />
                   <h2 className="text-xl font-semibold bg-gradient-to-r from-neon-purple to-neon-teal bg-clip-text text-transparent">
                     Complete Your Purchase
                   </h2>
@@ -418,6 +423,7 @@ const Cart = () => {
                 {/* Checkout Button */}
                 <Button 
                   className="w-full mt-6 h-12 rounded-full bg-gradient-to-r from-neon-purple to-neon-teal hover:shadow-lg hover:shadow-neon-purple/30 gap-2"
+                  onClick={handleCheckout}
                 >
                   <CreditCard size={18} />
                   Proceed to Checkout

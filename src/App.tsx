@@ -11,9 +11,14 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import About from "./pages/About";
+import Collections from "./pages/Collections";
+import Wishlist from "./pages/Wishlist";
+import Account from "./pages/Account";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
-
-// Add any other pages here as needed
 
 const queryClient = new QueryClient();
 
@@ -29,7 +34,13 @@ const App = () => (
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
-            {/* Additional routes can be added here */}
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
