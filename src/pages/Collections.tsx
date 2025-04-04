@@ -40,7 +40,7 @@ const collections = [
     id: 'smart-wearables',
     name: 'Smart Wearables',
     description: 'Devices that enhance your daily activities.',
-    image: 'https://images.unsplash.com/photo-1544117519-31a4a39696b4',
+    image: 'https://plus.unsplash.com/premium_photo-1712764121254-d9867c694b81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2VhcmFibGUlMjB0ZWNofGVufDB8fDB8fHww',
     products: 15
   },
   {

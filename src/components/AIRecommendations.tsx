@@ -23,7 +23,7 @@ const getRecommendedProducts = (category: string): Product[] => {
     name: `${category.charAt(0).toUpperCase() + category.slice(1)} Product ${i + 1}`,
     price: 99.99 + (i * 10),
     oldPrice: i % 2 === 0 ? 129.99 + (i * 10) : undefined,
-    image: `https://source.unsplash.com/random/300x300?product&sig=${category}-${i}`,
+    image: `https://plus.unsplash.com/premium_photo-1675896084254-dcb626387e1e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D${category}-${i}`,
     category: category.charAt(0).toUpperCase() + category.slice(1),
     isNew: i === 0,
     isOnSale: i === 1,
