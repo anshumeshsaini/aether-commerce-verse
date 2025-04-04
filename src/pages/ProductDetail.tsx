@@ -12,8 +12,9 @@ import {
   Star,
   ChevronRight,
   ArrowLeft,
-  Eye360,
-  Truck
+  RotateCw,
+  Truck,
+  Sparkles
 } from 'lucide-react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
@@ -179,7 +180,7 @@ const ProductDetail = () => {
               {/* 3D View Button */}
               <div className="mt-6">
                 <Button variant="outline" className="w-full py-6 h-auto gap-2 rounded-xl border-white/20">
-                  <Eye360 size={20} />
+                  <RotateCw size={20} />
                   <span>View in 3D / Augmented Reality</span>
                 </Button>
               </div>

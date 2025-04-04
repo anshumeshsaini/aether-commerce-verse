@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Mic, Sparkles, Image, ShoppingBag, Eye360, MessageCircle } from 'lucide-react';
+import { Zap, Mic, Star, Image, ShoppingBag, RotateCw, MessageCircle } from 'lucide-react';
 
 const features = [
   {
-    icon: <Sparkles size={24} className="text-neon-purple" />,
+    icon: <Star size={24} className="text-neon-purple" />,
     title: "AI Personal Shopper",
     description: "Get personalized recommendations based on your style, mood, and past purchases."
   },
@@ -20,7 +20,7 @@ const features = [
     description: "Upload an image to find similar or complementary products instantly."
   },
   {
-    icon: <Eye360 size={24} className="text-neon-purple" />,
+    icon: <RotateCw size={24} className="text-neon-purple" />,
     title: "AR Preview",
     description: "See how products look in your space before purchasing."
   },

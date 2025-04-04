@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
-import ProductGrid from '@/components/ProductGrid';
+import { ProductGrid } from '@/components/ProductGrid';
 import AIRecommendations from '@/components/AIRecommendations';
 import FeaturesSection from '@/components/FeaturesSection';
 import NewsletterSection from '@/components/NewsletterSection';

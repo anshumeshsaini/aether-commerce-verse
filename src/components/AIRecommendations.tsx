@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-react';
+import { Star, ThumbsUp, ThumbsDown, RefreshCw } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { ProductGrid } from "@/components/ProductGrid";
 import { Product } from "@/components/ProductCard";
@@ -70,7 +70,7 @@ const AIRecommendations: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="text-neon-purple" size={24} />
+            <Star className="text-neon-purple" size={24} />
             <h2 className="text-3xl font-bold bg-gradient-to-r from-neon-purple to-neon-teal bg-clip-text text-transparent">
               AI-Powered Recommendations
             </h2>
